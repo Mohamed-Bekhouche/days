@@ -15,20 +15,19 @@ import java.util.Scanner;
  * then print the week day names. 
  *
  * @author sivagamasrinivasan
+ * Modified by : Mohamed Bekhouche 
  */
 public class Days {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-         
-    Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
-    String code = in.next();
-    Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
-    }// TODO code application logic here
-    
-    
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the day number (1-7) in integer:");
+        int dayNumber = in.nextInt();
+
+        if (dayNumber >= 1 && dayNumber <= 7) {
+            Weekday day = Weekday.values()[dayNumber - 1];
+            System.out.println(day.getName());
+        } else {
+            System.out.println("Invalid day number");
+        }
+    }
 }
